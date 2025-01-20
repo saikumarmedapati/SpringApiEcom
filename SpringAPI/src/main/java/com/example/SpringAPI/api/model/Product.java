@@ -1,8 +1,16 @@
 package com.example.SpringAPI.api.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+
+@Entity
+@Table(name = "cracker_store_info")
 public class Product {
 	
-	private int id;
+	@Id
+	private Long id;
 	private String name;
 	private String category;
 	private String brand;
@@ -13,7 +21,7 @@ public class Product {
 	private double discount;
 	
 	//constructor using fields
-	public Product(int id, String name, String category, String brand, int price, int box, int quantity, double total,
+	public Product(Long id, String name, String category, String brand, int price, int box, int quantity, double total,
 			double discount) {
 		super();
 		this.id = id;
@@ -27,21 +35,16 @@ public class Product {
 		this.discount = discount;
 	}
 	
-	public Product(int id, String name, String category, String brand, int price, int box) {
-		this.id = id;
-		this.name = name;
-		this.category = category;
-		this.brand = brand;
-		this.price = price;
-		this.box = box;
+	public Product() {
 	}
 
+
 	//getters and setters
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
